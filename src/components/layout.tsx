@@ -11,7 +11,7 @@ export default function RootLayout({
 
   if (authPages.includes(params.pathname)) {
     return (
-      <div className="flex h-svh items-center justify-center bg-background text-primary">
+      <div className="flex h-svh items-center justify-center bg-background text-primary w-full px-3">
         {children}
       </div>
     );
