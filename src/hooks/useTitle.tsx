@@ -1,18 +1,18 @@
-import React from 'react'
+import { useEffect, useRef } from "react";
 
 const useTitle = (title: string) => {
-  const documentDefined = typeof document !== 'undefined'
-  const originalTitle = React.useRef(documentDefined ? document.title : null)
+  const documentDefined = typeof document !== "undefined";
+  const originalTitle = useRef(documentDefined ? document.title : null);
 
-  React.useEffect(() => {
-    if (!documentDefined) return
+  useEffect(() => {
+    if (!documentDefined) return;
 
-    if (document.title !== title) document.title = title
+    if (document.title !== title) document.title = title;
 
     return () => {
-      document.title = originalTitle.current || ''
-    }
-  }, [])
-}
+      document.title = originalTitle.current || "";
+    };
+  }, [documentDefined, title]);
+};
 
-export default useTitle
+export default useTitle;

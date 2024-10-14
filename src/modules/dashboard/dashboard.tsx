@@ -1,6 +1,6 @@
-import useTitle from '@/hooks/useTitle'
+import useTitle from "@/hooks/useTitle";
 
 export default function Dashboard() {
-  useTitle('Dashboard')
-  return <div>Dashboard</div>
+  useTitle("Dashboard");
+  return <div>Dashboard</div>;
 }

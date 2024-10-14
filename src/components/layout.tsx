@@ -1,23 +1,23 @@
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 
-const authPages = ['/login']
+const authPages = ["/login"];
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  const params = useLocation()
+  const params = useLocation();
 
   if (authPages.includes(params.pathname)) {
     return (
-      <div className="h-svh flex items-center justify-center bg-gray-900 text-white">
+      <div className="flex h-svh items-center justify-center bg-background text-primary">
         {children}
       </div>
-    )
+    );
   }
 
   return (
-    <div className="h-svh flex items-center justify-center">{children}</div>
-  )
+    <div className="flex h-svh items-center justify-center">{children}</div>
+  );
 }

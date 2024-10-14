@@ -1,9 +1,9 @@
-import Dashboard from '@/modules/dashboard/dashboard'
-import RequireAuth from '@auth-kit/react-router/RequireAuth'
-import React, { Suspense } from 'react'
-import { RouteObject } from 'react-router-dom'
+import Dashboard from "@/modules/dashboard/dashboard";
+import RequireAuth from "@auth-kit/react-router/RequireAuth";
+import React, { Suspense } from "react";
+import type { RouteObject } from "react-router-dom";
 
-const Login = React.lazy(() => import('@/modules/auth/login'))
+const Login = React.lazy(() => import("@/modules/auth/login"));
 
 export const routes: Array<RouteObject> = [
   {
@@ -17,7 +17,7 @@ export const routes: Array<RouteObject> = [
     ),
   },
   {
-    path: 'login',
+    path: "login",
     element: (
       <Suspense>
         <Login />
@@ -25,9 +25,9 @@ export const routes: Array<RouteObject> = [
     ),
   },
   {
-    path: '*',
+    path: "*",
     element: <div>Not Found</div>,
   },
-]
+];
 
-export default routes
+export default routes;
