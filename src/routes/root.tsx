@@ -1,5 +1,4 @@
 import Dashboard from "@/modules/dashboard/dashboard";
-import RequireAuth from "@auth-kit/react-router/RequireAuth";
 import React, { Suspense } from "react";
 import type { RouteObject } from "react-router-dom";
 
@@ -10,9 +9,7 @@ export const routes: Array<RouteObject> = [
     index: true,
     element: (
       <Suspense>
-        <RequireAuth fallbackPath="/login">
-          <Dashboard />
-        </RequireAuth>
+        <Dashboard />
       </Suspense>
     ),
   },
