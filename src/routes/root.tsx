@@ -1,8 +1,9 @@
-import Dashboard from "@/modules/dashboard/dashboard";
+import Content from "@/routes/auth/dashboard/content";
+import Dashboard from "@/routes/auth/dashboard/dashboard";
 import React, { Suspense } from "react";
 import type { RouteObject } from "react-router-dom";
 
-const Login = React.lazy(() => import("@/modules/auth/login"));
+const Login = React.lazy(() => import("@/routes/auth/login"));
 
 export const routes: Array<RouteObject> = [
   {
@@ -20,6 +21,10 @@ export const routes: Array<RouteObject> = [
         <Login />
       </Suspense>
     ),
+  },
+  {
+    path: "content",
+    element: <Content />,
   },
   {
     path: "*",
